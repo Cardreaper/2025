@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Ano Novo 2025</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            overflow: hidden;
+            font-family: 'Georgia', serif; /* Fonte serifada mais elegante */
+        }
+        .cartao {
+            text-align: center;
+            color: #fff;
+            padding: 50px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 10;
+            animation: fadeIn 2s ease-in-out;
+            font-family: 'Great Vibes', cursive; /* Fonte cursiva elegante */
+        }
+        .cartao h1 {
+            font-size: 4em;
+            color: #FFD700; /* Cor dourada */
+            text-shadow: 3px 3px 5px rgba(255, 215, 0, 0.8), 0 0 25px #FFD700, 0 0 5px #FFD700; /* Efeito de brilho dourado */
+            animation: bounce 1.5s infinite;
+        }
+        .cartao p {
+            font-size: 1.8em;
+            margin-top: 20px;
+            color: #f0b40d;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.7), 0 0 10px #FFD700, 0 0 5px #FFD700; /* Efeito de sombra dourada */
+            animation: slideUp 1s ease-out;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Estilos adicionais para a fonte elegantes */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    </style>
+</head>
+<body>
+
+<!-- Cartão de Ano Novo -->
+<div class="cartao">
+    <h1>Feliz Ano Novo 2025!</h1>
+    <p>Que este novo ano seja repleto de alegria, sucesso e momentos inesquecíveis!</p>
+</div>
+
+<!-- Confetes com Particles.js -->
+<div id="confetes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+
+<!-- Fogos de Artifício com Fireworks.js -->
+<canvas id="fireworksCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+
+<!-- Bibliotecas -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js"></script>
+
+<script>
+  // Configuração dos Confetes com Particles.js
+  particlesJS('confetes', {
+    particles: {
+      number: {
+        value: 100,
+        density: { enable: true, value_area: 800 }
+      },
+      color: { value: "#FFD700" }, // Confetes dourados
+      shape: {
+        type: "circle",
+        stroke: { width: 0, color: "#000000" },
+        polygon: { nb_sides: 5 }
+      },
+      opacity: { value: 0.7, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+      size: { value: 4, anim: { enable: true, speed: 40, size_min: 0.1, sync: false } },
+      line_linked: { enable: false },
+      move: {
+        enable: true,
+        speed: 6,
+        direction: "random",
+        random: true,
+        straight: false,
+        out_mode: "out",
+        bounce: false
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" }
+      }
+    },
+    retina_detect: true
+  });
+
+  // Inicialização dos Fogos de Artifício com Fireworks.js
+  const fireworks = new Fireworks.default({
+    particleAmount: 150, // Quantidade de partículas
+    particleSize: 5, // Tamanho das partículas
+    duration: 3, // Duração do efeito
+    angle: 90, // Angulação da explosão
+    speed: 10, // Velocidade das partículas
+    acceleration: 1.05, // Aceleração das partículas
+    friction: 0.99, // Atrito
+    gravity: 0.05, // Gravidade
+    hue: { min: 0, max: 60 }, // Cor das partículas (dourado)
+    explosion: true, // Ativa a explosão
+    sound: true, // Ativa som
+    delay: 0, // Atraso na animação
+    canvas: document.getElementById('fireworksCanvas')
+  });
+
+  fireworks.start();
+</script>
+
+</body>
+</html>
