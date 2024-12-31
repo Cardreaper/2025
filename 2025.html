@@ -64,6 +64,16 @@
 
         /* Estilos adicionais para a fonte elegantes */
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+        /* Marca d'água */
+        .marca-agua {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 20%; /* Ajuste o tamanho da imagem conforme necessário */
+            opacity: 0.2; /* Torna a imagem mais transparente */
+            z-index: 5;
+        }
     </style>
 </head>
 <body>
@@ -79,6 +89,9 @@
 
 <!-- Fogos de Artifício com Fireworks.js -->
 <canvas id="fireworksCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;"></canvas>
+
+<!-- Marca d'água (Imagem) -->
+<img src="https://github.com/seu-usuario/seu-repositorio/raw/main/ativocores.png" class="marca-agua" alt="Marca d'água">
 
 <!-- Bibliotecas -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
